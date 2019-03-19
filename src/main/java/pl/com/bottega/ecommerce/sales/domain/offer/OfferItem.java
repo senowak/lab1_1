@@ -30,14 +30,12 @@ public class OfferItem {
 
     // private BigDecimal discount;
 
-    public OfferItem(String productId, BigDecimal productPrice, String productName, Date productSnapshotDate, String productType,
-            int quantity) {
-        this(productId, productPrice, productName, productSnapshotDate, productType, quantity, null, null);
+    public OfferItem(Product product, int quantity) {
+        this(product, quantity, null, null);
     }
 
-    public OfferItem(String productId, BigDecimal productPrice, String productName, Date productSnapshotDate, String productType,
-            int quantity, BigDecimal discount, String discountCause) {
-        this.product = new Product(productId, productPrice, productName, productSnapshotDate, productType);
+    public OfferItem(Product product, int quantity, BigDecimal discount, String discountCause) {
+        this.product = product;
 
         this.quantity = quantity;
         this.discount = new Discount(discount, discountCause);
